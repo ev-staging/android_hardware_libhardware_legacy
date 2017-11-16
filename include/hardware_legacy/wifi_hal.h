@@ -364,9 +364,9 @@ typedef struct {
             int num, wifi_passpoint_network *networks, wifi_passpoint_event_handler handler);
     wifi_error (* wifi_reset_passpoint_list)(wifi_request_id id, wifi_interface_handle iface);
     wifi_error (*wifi_set_lci) (wifi_request_id id, wifi_interface_handle iface,
-	                             wifi_lci_information *lci);
+                                 wifi_lci_information *lci);
     wifi_error (*wifi_set_lcr) (wifi_request_id id, wifi_interface_handle iface,
-	                             wifi_lcr_information *lcr);
+                                 wifi_lcr_information *lcr);
     wifi_error (*wifi_start_sending_offloaded_packet)(wifi_request_id id,
                                 wifi_interface_handle iface, u16 ether_type, u8 *ip_packet,
                                 u16 ip_packet_len, u8 *src_mac_addr, u8 *dst_mac_addr,
@@ -478,6 +478,7 @@ typedef struct {
                         iface, wifi_radio_mode_change_handler eh);
     wifi_error (*wifi_set_latency_mode)(wifi_interface_handle iface,
                                         wifi_latency_mode mode);
+    wifi_error (*wifi_set_qpower)(wifi_interface_handle iface, u8 powersave);
 } wifi_hal_fn;
 wifi_error init_wifi_vendor_hal_func_table(wifi_hal_fn *fn);
 #ifdef __cplusplus
